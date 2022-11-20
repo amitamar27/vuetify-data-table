@@ -1,0 +1,11 @@
+
+thead{
+    background-color: #f4f4f4;
+    span{
+        color: #000000;
+    }
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
