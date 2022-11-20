@@ -12,9 +12,14 @@
     <v-data-table
       :headers="headers"
       :items="products.records"
-      :search="search"
+      item-key="name"
+      class="elevation-1"
       :loading="isLoading"
-    ></v-data-table>
+    >
+      <template v-slot:item.num="{ index }">
+        {{ index + 1 }}
+      </template>
+    </v-data-table>
   </v-card>
 </template>
 
@@ -25,6 +30,7 @@ export default {
     return {
       search: "",
       headers: [
+        { text: "", value: "num", sortable: false },
         {
           text: "Year",
           align: "start",
